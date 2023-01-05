@@ -1,0 +1,2 @@
+Reading a file in Node.js can take different forms.
+First, you can utilize the standard asynchronous function
