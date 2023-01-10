@@ -15,7 +15,7 @@ const countOdd = function(file,cb){
 countOdd('./data.js',function(err, lines){
 
       if(err) {
-	 throw err;
+	      throw err;
       }
 
      lines.map(Number).filter(function(num){
