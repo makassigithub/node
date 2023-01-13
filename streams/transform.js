@@ -8,3 +8,4 @@ fs.createReadStream(file)
     .pipe(fs.createWriteStream(`${file}.gz`))
     .on('finish',()=>console.log('Done'));
 
+// node transform.js big_file     
