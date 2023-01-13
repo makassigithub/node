@@ -4,12 +4,10 @@ const fs  = require('fs');
 class ExecuteAndLog extends Emitter {
     execute(asyncFunc, ...args){
         console.time('execute');
-
         asyncFunc(...args,(err,data)=>{
             if(err){
                return  this.emit('error',err);
             }
-
             this.emit('data',data);
         });
         console.timeEnd('execute');

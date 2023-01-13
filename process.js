@@ -13,7 +13,6 @@ process.on('uncaughtException', excep => {
 
 
 // Keep the event loop busy
-
 process.stdin.resume();
 
 // simulate a error

@@ -18,7 +18,6 @@ fs.readFile(__filename,(err,buffer) => {
     console.log("TAG:----",tag,"----TAG");
     for(let i=0; i<tag.length; i++){
         tag[i] = conversionMap[tag[i]];
-      
     }
 
     console.log(buffer.toString());
