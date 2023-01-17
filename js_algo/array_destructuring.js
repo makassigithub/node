@@ -27,7 +27,7 @@ console.log("fn:", firstName, "----", "ln:", lastName, "age: ", "----", age);
 
 // ignoring some members
 //The left-hand side(to be assigned is not an array),
-//but a block tobe use when assigning form arrays
+//but a block to be used when assigning form arrays
 var age2;
 [, , age2] = getCredentials();
 console.log("age2: ", age2);

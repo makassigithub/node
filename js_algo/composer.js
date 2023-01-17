@@ -1,15 +1,24 @@
 const compose = (...fns) => (initialValue) =>
   fns.reduceRight((acc, currentFn) => currentFn(acc), initialValue);
 
+  function compose2(...fns) {
+    return function withInitialValue(initialValue){
+        return fns.reduceRight(function(acc, curr){
+            return curr(acc);
+        },initialValue)
+    }
+  }
+
 const add10 = (x) => x + 10;
 const squareIt = (y) => y * y;
 const divideBy2 = (z) => z / 2;
 
-const composer = compose(divideBy2, squareIt, add10);
+const composer = compose2(divideBy2, squareIt, add10);
 console.log("composition: " + composer(0));
 
 const pipe = (...fcts) => (initialValue) =>
   fcts.reduce((acc, fct) => fct(acc), initialValue);
+  
 const trace = (desc) => (acc) => {
   console.log(`${desc} : ${acc}`);
   return acc;

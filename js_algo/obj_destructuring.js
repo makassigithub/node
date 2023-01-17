@@ -2,7 +2,7 @@
 
 'use strict'
 var house = {
-                location:'Boregard',
+                location:'Beauregard',
                 price:800,
                 occupants : ['BT','CT','HT']
             };

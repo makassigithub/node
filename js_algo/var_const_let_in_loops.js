@@ -5,7 +5,10 @@ const my_array = [];
 for(var i = 0; i< 5;i++){
     my_array.push(function(){
         return i;
-    })
+    });
+    my_array.push(function(){
+      return i;
+  })
 }
 my_array.map(function(x){
   console.log(x()); //[5,5,5,5,5]

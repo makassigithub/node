@@ -1,6 +1,6 @@
 
 'use strict'
-// When we create an object using a jason or a constructor
+// When we create an object using a literal or a constructor
 //JS creates a prototype for it by default that is Object.prototype.
 var house = {
 		price : 200000
@@ -13,26 +13,27 @@ console.log('prototype of house is by default Object.prototype: ' , house.__prot
 // Create an empty object and set its prototype ot house
 var myHouse = Object.create(house);
 
-//The price property is not define for housse1. But because myHouse's prototype is house
+//The price property is not define for myHouse. But because myHouse's prototype is house
 //Js Look for the price on house and returns it. 
+console.log(JSON.stringify(myHouse));
 console.log(myHouse.price);
+
 
 //let's check the prototype chain. JS checks for toString on myHouse and does not find it
 // then checks on it's prototype, which does not have toString(), then checks for toString 
 //on the prototype of the prototype i.e. that of house and returns it
-console.log('type of myHouse.__proto__.toString', typeof myHouse.__proto__.toString);
+console.log('type of myHouse.__proto__.toString ? :', typeof myHouse.__proto__.toString);
 
 //See that the prototype of myHouse is house
-console.log('the prototype of myHouse is house: ', myHouse.__proto__ === house);
+console.log('the prototype of myHouse is house ? : ', myHouse.__proto__ === house);
 
 // the prototype of myHouse is not that  of object
-console.log('the prototype of myHouse is that  of Object: ', myHouse.__proto__ === Object.prototype);
+console.log('the prototype of myHouse is that  of Object? : ', myHouse.__proto__ === Object.prototype);
 
 // but the prototype of the prototype of myHouse is Object.prototype
-console.log('the prototype of the prototype of myHouse is Object.prototype: ', myHouse.__proto__.__proto__ === Object.prototype);
+console.log('the prototype of the prototype of myHouse is Object.prototype?: ', myHouse.__proto__.__proto__ === Object.prototype);
 
 //Object fields can be set using Object.defineProperty()
-
 
 Object.defineProperty(myHouse,'height',{
 	value :45,

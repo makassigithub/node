@@ -9,3 +9,16 @@ const combineReducer = config => (state, action) => {
 		return newValue;
 	})
 }
+
+function combineReducer(config){
+    return function reduce(state, action){
+       return Object.keys(config).reduce(function(state,key){
+            const reducer = config[key];
+            const initialValue = state[key];
+            const currentValue = reducer(initialValue,action);
+                if(!currentValue)
+                    throw('error');
+            return currentValue;
+        })
+    }
+}
